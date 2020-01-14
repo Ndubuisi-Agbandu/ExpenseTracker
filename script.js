@@ -3,15 +3,6 @@ function getValueOfBudget() {
 	let userBalance = document.getElementById('balance').value = userBudget;
 }
 
-// let priceInputField = document.querySelector('#price');
-// priceInputField.addEventListener('keyup', () => {
-// 	let valueOfPrice = parseInt(document.getElementById('price').value);
-// 	let userBudget = parseInt(document.getElementById('budget').value);	
-// 	let userBalance = document.getElementById('balance').value = userBudget - valueOfPrice;
-// });
-
-
-
 
 let addInputElements = document.querySelector('#add');
 addInputElements.addEventListener('click', () => {
@@ -52,18 +43,6 @@ addInputElements.addEventListener('click', () => {
 	  to a another div that called userInput which can be found in my HTML.
 	*/
 	userInputDiv.appendChild(parent);
-
-	let inputsContainer = document.querySelector('div#userInput');
-	let lastUserInput = inputsContainer.querySelector('div:last-child');
-	let getLastElement = lastUserInput.querySelector('input#price');
-	
-	getLastElement.addEventListener('keyup', () => {
-		let valueOfPrice = parseInt(document.getElementById('price').value);
-		let userBudget = parseInt(document.getElementById('budget').value);	
-		let userBalance = parseInt(document.getElementById('balance').value);
-		let updateUserBalance = userBalance - valueOfPrice;
-		userBalance = document.getElementById('balance').value = updateUserBalance;
-	});
 	
 
 	removeButton.addEventListener('click', (e) => {
@@ -73,12 +52,11 @@ addInputElements.addEventListener('click', () => {
 
 
 
-
-// let removeSingleElementButton = document.querySelector('#remove');
-// removeSingleElementButton.addEventListener('click', () => {
-// 	let child = document.getElementById('userInputChild');
-// 	child.remove();
-// });
+let removeSingleElementButton = document.querySelector('#remove');
+removeSingleElementButton.addEventListener('click', () => {
+	let child = document.getElementById('userInputChild');
+	child.remove();
+});
 
 
 
