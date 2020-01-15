@@ -5,20 +5,18 @@ a {
 }
 
 div.navbar {
-	display: flex;
-	align-items: center;
 	box-shadow: 5px 5px 5px lightgrey;
 	padding: 10px;
 }
 
-div.navbar h2, div.navbar h3 {
+div.navbar h2 {
 	margin: 0;
 	font-family: arial black;
 }
 
 div.input {
 	margin-top: 30px;
-	padding: 0 200px;
+	padding: 0 150px;
 }
 
 div.input input {
