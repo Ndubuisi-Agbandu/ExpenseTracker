@@ -5,10 +5,11 @@ function getValueOfBudget() {
 }
 
 
-let addInputElements = document.querySelector('#add');
-addInputElements.addEventListener('click', () => {
+
+// This function is responsible for creating 2 input boxes and a delete button.
+function addElements() {
 	/* Create the item field, give it an id of the default item field, give it a placeholder called Item and also the input required attribute.
-		The reason for giving it the same id as the default is so that the the styles under that id will affect it.
+	The reason for giving it the same id as the default is so that the the styles under that id will affect it.
 	*/
 	let userInputDiv = document.getElementById('userInput');
 	let parent = document.createElement('div');
@@ -49,7 +50,8 @@ addInputElements.addEventListener('click', () => {
 	removeButton.addEventListener('click', (e) => {
 		e.target.parentNode.remove();
 	});
-});
+}
+
 
 
 
@@ -72,10 +74,3 @@ removeAllButton.addEventListener('click', () => {
 	userInputDiv.innerHTML = '';
 	getValueOfBudget();
 });
-
-
-
-function showTotalAmount() {
-	let firstPrice = document.getElementById('price').value;
-	let totalAmount = document.getElementById('total').value = firstPrice;
-}
