@@ -1,13 +1,15 @@
+// This function sets the value of balance to the value of budget when the user sets the budget.
 function getValueOfBudget() {
 	let userBudget = parseInt(document.getElementById('budget').value);
 	let userBalance = document.getElementById('balance').value = userBudget;
 }
 
 
-let addInputElements = document.querySelector('#add');
-addInputElements.addEventListener('click', () => {
+
+// This function is responsible for creating 2 input boxes and a delete button.
+function addElements() {
 	/* Create the item field, give it an id of the default item field, give it a placeholder called Item and also the input required attribute.
-		The reason for giving it the same id as the default is so that the the styles under that id will affect it.
+	The reason for giving it the same id as the default is so that the the styles under that id will affect it.
 	*/
 	let userInputDiv = document.getElementById('userInput');
 	let parent = document.createElement('div');
@@ -44,14 +46,16 @@ addInputElements.addEventListener('click', () => {
 	*/
 	userInputDiv.appendChild(parent);
 	
-
+	// What this function does is that it deletes a particular input box.
 	removeButton.addEventListener('click', (e) => {
 		e.target.parentNode.remove();
 	});
-});
+}
 
 
 
+
+// There are two input boxes that comes up on page load, so i decided to write it own separate function for deleting it.
 let removeSingleElementButton = document.querySelector('#remove');
 removeSingleElementButton.addEventListener('click', () => {
 	let child = document.getElementById('userInputChild');
@@ -59,11 +63,14 @@ removeSingleElementButton.addEventListener('click', () => {
 });
 
 
-
+/*
+	This function is used to delete as many input box that's available and then call the getValueOfBudget function
+	that reset the balance to become the value of budget and the reason for this is because, 
+	as the user keeps adding new price for each item, the balance is reducing.
+*/
 let removeAllButton = document.querySelector('#removeAll');
 removeAllButton.addEventListener('click', () => {
 	let userInputDiv = document.querySelector('#userInput');
 	userInputDiv.innerHTML = '';
 	getValueOfBudget();
 });
-
